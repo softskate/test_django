@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Пример древовидного меню</title>
+    <style>
+        /* Базовые стили для меню (настройте по своему вкусу) */
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav li {
+            margin: 5px 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+        }
+        .active {
+            font-weight: bold;
+        }
+        li ul {
+        margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Пример древовидного меню</h1>
+    
+    <nav>
+        {% load menu_tags %}
+        <ul>
+            {% autoescape off %}
+            {% draw_menu 'main_menu' %}
+            {% endautoescape %}
+        </ul>
+    </nav>
+
+    <!-- Остальной контент страницы -->
+
+</body>
+</html>
